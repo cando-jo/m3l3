@@ -50,12 +50,12 @@ def form():
 @app.route('/submit', methods=['POST'])
 def submit_form():
     # Veri toplama için değişkenleri tanımlayın
-    name = request.form['name']
+    name = request.form['isim_inputu']
+    address = request.form['address']
+    date = request.form['date']
+    print("name is:", name)
 
     # Verilerinizi kaydedebilir veya e-posta ile gönderebilirsiniz
-    return render_template('form_result.html', 
-                           # Değişkenleri buraya yerleştirin
-                           name=name,
-                           )
+    return render_template('form_result.html', name=name, address=address, date=date)
 
 app.run(debug=True)
